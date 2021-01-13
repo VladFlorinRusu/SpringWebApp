@@ -23,15 +23,16 @@ public class HelloController {
     }
 
 
-    @RequestMapping("/")
-    public String index() {
-        return "Hello! The time is "+ LocalDateTime.now();
+    @GetMapping("/time")
+    public String index(Model model) {
+        model.addAttribute("time",LocalDateTime.now());
+        return "time";
     }
 
 
-    @RequestMapping("/home")
+    @RequestMapping("")
     public String home() {
-        return "Another text here";
+        return "home";
     }
 
 }
