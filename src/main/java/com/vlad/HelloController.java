@@ -24,13 +24,20 @@ public class HelloController {
 
 
     @GetMapping("/time")
-    public String index(Model model) {
+    public String time(Model model) {
         model.addAttribute("time",LocalDateTime.now());
         return "time";
     }
 
+    @GetMapping("/index")
+    public String index()
+    {
+        return "index";
+    }
 
-    @RequestMapping("")
+
+
+    @GetMapping("")
     public String home() {
         return "home";
     }
